@@ -18,8 +18,52 @@ find_package(catkin REQUIRED)
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
 # catkin_python_setup()
 
+# Download installation script of Torch
+file(DOWNLOAD https://raw.githubusercontent.com/torch/ezinstall/master/install-deps $ENV{HOME}/install_deps.sh)
+
+# Execute the installation script of Torch
+# Clone Torch repo
+# Clone Openface repo
 execute_process(
-  COMMAND sudo bash ${CMAKE_CURRENT_SOURCE_DIR}/install.sh
+  COMMAND sudo bash -e $ENV{HOME}/install_deps.sh
+  COMMAND git clone https://github.com/torch/distro.git torch --recursive
+  WORKING_DIRECTORY $ENV{HOME}
+)
+
+## install Torch
+execute_process(
+  COMMAND bash ./install.sh
+  WORKING_DIRECTORY $ENV{HOME}/torch
+)
+
+# install Torch packages
+execute_process(
+  COMMAND ./luarocks install nn
+  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+)
+execute_process(
+  COMMAND ./luarocks install dpnn
+  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+)
+execute_process(
+  COMMAND ./luarocks install image
+  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+)
+execute_process(
+  COMMAND ./luarocks install optim
+  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+)
+execute_process(
+  COMMAND ./luarocks install csvigo
+  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+)
+execute_process(
+  COMMAND ./luarocks install torchx
+  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+)
+execute_process(
+  COMMAND ./luarocks install tds
+  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
 )
 
 ################################################

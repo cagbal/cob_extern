@@ -4,43 +4,42 @@ set -ex
 # Make it "0" if you have already OpenCV
 INSTALL_OPENCV=0
 # Make it "0" if you have already Dlib
-INSTALL_DLIB=1
+INSTALL_DLIB=0
 # Make it "0" if you have already Torch, but you need to install
 # Torch packages manually
 INSTALL_TORCH=1
 
-apt-get update && apt-get install -y \
-    build-essential \
-    cmake \
-    curl \
-    gfortran \
-    git \
-    graphicsmagick \
-    libgraphicsmagick1-dev \
-    libatlas-dev \
-    libavcodec-dev \
-    libavformat-dev \
-    libboost-all-dev \
-    libgtk2.0-dev \
-    libjpeg-dev \
-    liblapack-dev \
-    libswscale-dev \
-    libssl-dev \
-    libffi-dev \
-    pkg-config \
-    python-dev \
-    python-pip \
-    python-numpy \
-    python-nose \
-    python-scipy \
-    python-pandas \
-    python-numpy \
-    python-protobuf\
-    python-openssl \
-    software-properties-common \
-    wget \
-    zip \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#apt-get update && apt-get install -y \
+#    build-essential \ -
+#    cmake \ +
+#    curl \ +
+#    gfortran \ +
+#    git \ +
+#    graphicsmagick \ +
+#    libgraphicsmagick1-dev \ -
+#    libatlas-dev \ -
+#    libavcodec-dev \ +
+#    libavformat-dev \ +
+#    libboost-all-dev \ +
+#    libgtk2.0-dev \ +
+#    libjpeg-dev \ +
+#    liblapack-dev \ +
+#    libswscale-dev \ +
+#    libssl-dev \ +
+#    libffi-dev \+
+#    pkg-config \ +
+#    python-dev \ -
+#    python-pip \ -
+#    python-numpy \ +
+#    python-nose \ +
+#    python-scipy \ +
+#    python-pandas \ +
+#    python-protobuf\ -
+#    python-openssl \ +
+#    software-properties-common \ -
+#    wget \ +
+#    zip \ -
+#    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
 if [[ "$INSTALL_OPENCV" = 1 ]] ; then

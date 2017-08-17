@@ -12,4 +12,28 @@
 
 	<buildtool_depend>catkin</buildtool_depend>
 
+	<depend>libopencv-dev</depend>
+	<depend>cmake</depend>
+	<depend>curl</depend>
+	<depend>gfortran</depend>
+	<depend>git</depend>
+	<depend>graphicsmagick</depend>
+	<depend>atlas</depend>
+	<depend>ffmpeg</depend>
+	<depend>boost</depend>
+	<depend>gtk2</depend>
+	<depend>libjpeg</depend>
+	<depend>liblapack-dev</depend>
+	<depend>wget</depend>
+	<depend>libssl-dev</depend>
+	<depend>libffi-dev</depend>
+	<depend>pkg-config</depend>
+	<depend>python-numpy</depend>
+	<depend>python-nose</depend>
+	<depend>python-scipy</depend>
+	<depend>python-pandas</depend>
+	<depend>python-openssl</depend>
+
+
+
 </package>
