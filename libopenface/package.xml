@@ -33,7 +33,6 @@
 	<depend>python-scipy</depend>
 	<depend>python-pandas</depend>
 	<depend>python-openssl</depend>
-	<depend>python-dlib></depend> 
 
 
 
