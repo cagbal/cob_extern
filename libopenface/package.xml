@@ -35,6 +35,7 @@
 	<depend>python-openssl</depend>
 	<depend>python-dlib</depend>
 	<depend>python-pip</depend>
+	<depend>libreadline</depend>
 
 
 
