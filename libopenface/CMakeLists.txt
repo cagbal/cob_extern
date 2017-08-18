@@ -90,11 +90,6 @@ execute_process(
   WORKING_DIRECTORY $ENV{HOME}/openface
 )
 
-# Add it to the path
-execute_process(
-  COMMAND echo 'PATH=$PATH\:/root/torch/install/bin ; export PATH' >> ~/.bashrc
-)
-
 ################################################
 ## Declare ROS messages, services and actions ##
 ################################################
