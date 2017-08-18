@@ -23,14 +23,20 @@ file(DOWNLOAD https://raw.githubusercontent.com/torch/ezinstall/master/install-d
 
 # Execute the installation script of Torch
 # Clone Torch repo
-# Clone Openface repo
 execute_process(
   COMMAND sudo bash -e $ENV{HOME}/install_deps.sh
   COMMAND git clone https://github.com/torch/distro.git torch --recursive
   WORKING_DIRECTORY $ENV{HOME}
 )
 
-## install Torch
+# Clone Openface repo
+execute_process(
+  COMMAND sudo bash -e $ENV{HOME}/install_deps.sh
+  COMMAND git clone https://github.com/cmusatyalab/openface.git openface --recursive
+  WORKING_DIRECTORY $ENV{HOME}
+)
+
+# install Torch
 execute_process(
   COMMAND bash ./install.sh
   WORKING_DIRECTORY $ENV{HOME}/torch
@@ -64,6 +70,29 @@ execute_process(
 execute_process(
   COMMAND ./luarocks install tds
   WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+)
+
+# Download the openface models
+execute_process(
+  COMMAND bash get-models.sh
+  WORKING_DIRECTORY $ENV{HOME}/openface/models
+)
+
+# Install remaining dependencies
+execute_process(
+  COMMAND pip2 install -r requirements.txt
+  WORKING_DIRECTORY $ENV{HOME}/openface
+)
+
+# Install openface
+execute_process(
+  COMMAND python2 setup.py install
+  WORKING_DIRECTORY $ENV{HOME}/openface
+)
+
+# Add it to the path
+execute_process(
+  COMMAND echo 'PATH=$PATH\:/root/torch/install/bin ; export PATH' >> ~/.bashrc
 )
 
 ################################################
