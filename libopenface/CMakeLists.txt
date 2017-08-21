@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(libopenface) 
+project(libopenface)
 
 ## Add support for C++11, supported in ROS Kinetic and newer
 # add_definitions(-std=c++11)
@@ -37,10 +37,10 @@ execute_process(
 )
 
 # install Torch
-execute_process(
-  COMMAND bash ./install.sh
-  WORKING_DIRECTORY $ENV{HOME}/torch
-)
+#execute_process(
+#  COMMAND bash ./install.sh
+#  WORKING_DIRECTORY $ENV{HOME}/torch
+#)
 
 # install Torch packages
 execute_process(
