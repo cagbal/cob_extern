@@ -11,7 +11,6 @@ apt-get update && apt-get install -y \
     libatlas-dev \
     python-dev \
     python-pip \
-    python-protobuf\ -
     software-properties-common \
     zip \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -20,7 +19,6 @@ cd ~
 
 if [[ "$INSTALL_TORCH" = 1 ]] ; then
     curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash -e
-    git clone https://github.com/torch/distro.git ~/torch --recursive
     cd ~/torch && ./install.sh && \
     cd install/bin && \
     ./luarocks install nn && \

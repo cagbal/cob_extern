@@ -45,6 +45,7 @@ execute_process(
 # install Torch
 execute_process(
   COMMAND bash ./install.sh
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 # install Torch packages
