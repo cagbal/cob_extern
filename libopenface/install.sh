@@ -5,15 +5,15 @@ set -ex
 # Torch packages manually
 INSTALL_TORCH=1
 
-apt-get update && apt-get install -y \
-    build-essential \
-    libgraphicsmagick1-dev \
-    libatlas-dev \
-    python-dev \
-    python-pip \
-    software-properties-common \
-    zip \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#apt-get update && apt-get install -y \
+#    build-essential \
+#    libgraphicsmagick1-dev \
+#    libatlas-dev \
+#    python-dev \
+#    python-pip \
+#    software-properties-common \
+#    zip \
+#    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 cd ~
 
