@@ -32,14 +32,6 @@ if [[ "$INSTALL_TORCH" = 1 ]] ; then
     ./luarocks install tds
 fi
 
-cd ~
-
-git clone https://github.com/cmusatyalab/openface.git ~/openface --recursive
-cd ~/openface && \
-    ./models/get-models.sh && \
-    pip2 install -r requirements.txt && \
-    python2 setup.py install && \
-
 echo  'PATH=$PATH\:/root/torch/install/bin ; export PATH' >> ~/.bashrc
 
 echo Installation of dependencies of cob_people_detection completed

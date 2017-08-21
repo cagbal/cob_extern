@@ -42,35 +42,40 @@ execute_process(
 #  WORKING_DIRECTORY $ENV{HOME}/torch
 #)
 
+# install Torch
+execute_process(
+  COMMAND bash ./install.sh
+)
+
 # install Torch packages
-execute_process(
-  COMMAND ./luarocks install nn
-  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
-)
-execute_process(
-  COMMAND ./luarocks install dpnn
-  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
-)
-execute_process(
-  COMMAND ./luarocks install image
-  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
-)
-execute_process(
-  COMMAND ./luarocks install optim
-  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
-)
-execute_process(
-  COMMAND ./luarocks install csvigo
-  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
-)
-execute_process(
-  COMMAND ./luarocks install torchx
-  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
-)
-execute_process(
-  COMMAND ./luarocks install tds
-  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
-)
+#execute_process(
+#  COMMAND ./luarocks install nn
+#  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+#)
+#execute_process(
+#  COMMAND ./luarocks install dpnn
+#  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+#)
+#execute_process(
+#  COMMAND ./luarocks install image
+#  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+#)
+#execute_process(
+#  COMMAND ./luarocks install optim
+#  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+#)
+#execute_process(
+#  COMMAND ./luarocks install csvigo
+#  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+#)
+#execute_process(
+#  COMMAND ./luarocks install torchx
+#  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+#)
+#execute_process(
+#  COMMAND ./luarocks install tds
+#  WORKING_DIRECTORY $ENV{HOME}/torch/install/bin
+#)
 
 # Download the openface models
 execute_process(
