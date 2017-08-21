@@ -24,6 +24,7 @@
   <exec_depend>libphidgets</exec_depend>
   <exec_depend>libqsopt</exec_depend>
   <exec_depend>opengm</exec_depend>
+  <exec_depend>libopenface</exec_depend>
 
   <export>
     <metapackage/>
